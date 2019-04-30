@@ -1,0 +1,15 @@
+{
+    "name": "SurviveTheParty",
+    "references": [
+        "GUID:242e2f481d9de2645a6c864b3b6b12b2"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": []
+}

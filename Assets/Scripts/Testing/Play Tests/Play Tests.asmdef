@@ -1,0 +1,17 @@
+{
+    "name": "SurviveThePartyPlayTests",
+    "references": [
+        "GUID:bae2a4e2250494a41bb1a64e083e6870"
+    ],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": []
+}

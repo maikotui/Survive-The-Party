@@ -7,22 +7,13 @@ namespace STP.Info
     [CreateAssetMenu(menuName = "Info/Character Info", fileName = "Char")]
     public class CharInfo : ScriptableObject
     {
-        public static CharInfo Empty
-        {
-            get
-            {
-                return new CharInfo();
-            }
-        }
-
-        public string Name;
+        public string Name = "";
 
         public Sprite Portrait;
 
-        protected CharInfo()
+        public static CharInfo GetEmptyCharInfo()
         {
-            Name = "";
-            Portrait = default;
+            return CreateInstance<CharInfo>();
         }
     }
 }

@@ -20,7 +20,7 @@ namespace STP.Dialogue
         /// </summary>
         public CharInfo Speaker => m_speaker;
         [SerializeField]
-        private CharInfo m_speaker = CharInfo.Empty;
+        private CharInfo m_speaker = CharInfo.GetEmptyCharInfo();
 
         /// <summary>
         /// The text to be spoken to the player

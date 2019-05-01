@@ -28,7 +28,6 @@ namespace STP.Dialogue
         /// <summary>
         /// The destination of this option.
         /// </summary>
-        [HideInInspector]
         public DialogueNode Destination
         {
             get

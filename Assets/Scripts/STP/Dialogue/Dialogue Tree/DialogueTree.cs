@@ -29,6 +29,9 @@ namespace STP.Dialogue
             ValidateNodes();
         }
 
+        /// <summary>
+        /// Ensures that every node this tree contains is valid. If not, displays a warning in the console.
+        /// </summary>
         private void ValidateNodes()
         {
             if(StartNode == null)
@@ -58,6 +61,26 @@ namespace STP.Dialogue
                         Debug.LogWarning("Empty speaker for DialogueNode in Dialogue Tree '" + name + "'.");
                     }
                 }
+            }
+        }
+
+        /// <summary>
+        /// Travels to the node that is the destination of the option given. Returns the option that was chosen. If the optionID was invalid,
+        /// returns null.
+        /// </summary>
+        public DialogueOption ChooseOption(int optionID)
+        {
+            if (CurrentNode.Options.Count > 0 && CurrentNode.Options.Count <= optionID)
+            {
+                DialogueOption chosenOption = CurrentNode.Options[optionID];
+                CurrentNode = chosenOption.Destination;
+
+                return chosenOption;
+            }
+            else
+            {
+                Debug.LogError("Invalid option chosen for Dialogue Tree '" + name + "'.");
+                return null;
             }
         }
 

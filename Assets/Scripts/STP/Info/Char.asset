@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be3b976b07d62644b8c820b39f4f7b3c, type: 3}
-  m_Name: Test CharInfo
-  m_EditorClassIdentifier: 
-  Name: Test
+  m_Script: {fileID: 0}
+  m_Name: Char
+  m_EditorClassIdentifier: SurviveTheParty:STP.Info:CharInfo
+  Name: 
   Portrait: {fileID: 0}

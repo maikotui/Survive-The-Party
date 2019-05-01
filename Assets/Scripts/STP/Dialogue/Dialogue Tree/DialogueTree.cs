@@ -48,6 +48,14 @@ namespace STP.Dialogue
                         Debug.LogWarning("Empty destination exists within a OptionNode in Dialogue Tree '" + name + "'.");
                     }
                 }
+
+                if(node is DialogueNode dialogueNode)
+                {
+                    if(dialogueNode.Speaker == null)
+                    {
+                        Debug.LogWarning("Empty speaker for DialogueNode in Dialogue Tree '" + name + "'.");
+                    }
+                }
             }
         }
 

@@ -12,6 +12,8 @@ namespace STP.Dialogue
         /// Where the dialogue starts when initiated
         /// </summary>
         public DialogueNode StartNode { get; private set; }
+        [SerializeField]
+        private DialogueNode m_startNode; // needs to be serialized so it persists across scenes
 
         /// <summary>
         /// The currently addressed node in this graph. Starts with the start node.

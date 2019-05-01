@@ -24,6 +24,31 @@ namespace STP.Dialogue
         private void OnEnable()
         {
             CurrentNode = StartNode;
+            ValidateNodes();
+        }
+
+        private void ValidateNodes()
+        {
+            if(StartNode == null)
+            {
+                Debug.LogWarning("No start node is set in Dialogue Tree '" + name + "'.");
+            }
+
+            foreach(Node node in nodes)
+            {
+                if(node is DialogueOption optionNode)
+                {
+                    if(optionNode.GetPort("m_source").Connection == null)
+                    {
+                        Debug.LogWarning("Empty source exists within a OptionNode in Dialogue Tree '" + name + "'.");
+                    }
+                    
+                    if(optionNode.GetPort("m_destination").Connection == null)
+                    {
+                        Debug.LogWarning("Empty destination exists within a OptionNode in Dialogue Tree '" + name + "'.");
+                    }
+                }
+            }
         }
 
         /// <summary>

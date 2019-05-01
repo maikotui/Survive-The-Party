@@ -90,7 +90,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d9b963b98e919d4e9c36d5d7d4d1ab5, type: 3}
-  m_Name: Dialogue Option
+  m_Name: Red
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
   position: {x: -232, y: -424}
@@ -203,7 +203,7 @@ MonoBehaviour:
       _dynamic: 0
   m_source: {fileID: 0}
   m_speaker: {fileID: 0}
-  m_text: 
+  m_text: Red sucks bro lol
   m_option1: {fileID: 0}
   m_option2: {fileID: 0}
   m_option3: {fileID: 0}
@@ -225,6 +225,7 @@ MonoBehaviour:
   - {fileID: -7465040390413637731}
   - {fileID: -1817897818260308573}
   - {fileID: 2550462795468752995}
+  - {fileID: 7266854319093559091}
 --- !u!114 &2550462795468752995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -235,10 +236,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d9b963b98e919d4e9c36d5d7d4d1ab5, type: 3}
-  m_Name: Dialogue Option
+  m_Name: Green
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: -232, y: -184}
+  position: {x: -232, y: -200}
   ports:
     keys:
     - m_source
@@ -260,7 +261,10 @@ MonoBehaviour:
       _node: {fileID: 2550462795468752995}
       _typeQualifiedName: STP.Dialogue.DialogueOption, SurviveTheParty, Version=0.0.0.0,
         Culture=neutral, PublicKeyToken=null
-      connections: []
+      connections:
+      - fieldName: m_source
+        node: {fileID: 7266854319093559091}
+        reroutePoints: []
       _direction: 1
       _connectionType: 1
       _typeConstraint: 0
@@ -273,3 +277,80 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &7266854319093559091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86cb649c1b3ce724b8b7ca1ee473192f, type: 3}
+  m_Name: Dialogue Node
+  m_EditorClassIdentifier: 
+  graph: {fileID: 11400000}
+  position: {x: 248, y: -216}
+  ports:
+    keys:
+    - m_source
+    - m_option1
+    - m_option2
+    - m_option3
+    - m_option4
+    values:
+    - _fieldName: m_source
+      _node: {fileID: 7266854319093559091}
+      _typeQualifiedName: STP.Dialogue.DialogueOption, SurviveTheParty, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections:
+      - fieldName: m_destination
+        node: {fileID: 2550462795468752995}
+        reroutePoints: []
+      _direction: 0
+      _connectionType: 1
+      _typeConstraint: 2
+      _dynamic: 0
+    - _fieldName: m_option1
+      _node: {fileID: 7266854319093559091}
+      _typeQualifiedName: STP.Dialogue.DialogueNode, SurviveTheParty, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: m_option2
+      _node: {fileID: 7266854319093559091}
+      _typeQualifiedName: STP.Dialogue.DialogueNode, SurviveTheParty, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: m_option3
+      _node: {fileID: 7266854319093559091}
+      _typeQualifiedName: STP.Dialogue.DialogueNode, SurviveTheParty, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+    - _fieldName: m_option4
+      _node: {fileID: 7266854319093559091}
+      _typeQualifiedName: STP.Dialogue.DialogueNode, SurviveTheParty, Version=0.0.0.0,
+        Culture=neutral, PublicKeyToken=null
+      connections: []
+      _direction: 1
+      _connectionType: 1
+      _typeConstraint: 0
+      _dynamic: 0
+  m_source: {fileID: 0}
+  m_speaker: {fileID: 0}
+  m_text: Oh green is cool I guess
+  m_option1: {fileID: 0}
+  m_option2: {fileID: 0}
+  m_option3: {fileID: 0}
+  m_option4: {fileID: 0}

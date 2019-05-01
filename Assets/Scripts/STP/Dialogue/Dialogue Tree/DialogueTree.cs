@@ -5,7 +5,7 @@ using XNode;
 
 namespace STP.Dialogue
 {
-    [CreateAssetMenu]
+    [CreateAssetMenu(menuName = "Dialogue/Dialogue Tree", fileName = "Tree")]
     public class DialogueTree : NodeGraph
     {
         /// <summary>

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using STP.Info;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using UnityEngine;
 using XNode;
@@ -17,9 +18,9 @@ namespace STP.Dialogue
         /// <summary>
         /// The person who is speaking the given text
         /// </summary>
-        public string Speaker => m_speaker;
+        public CharInfo Speaker => m_speaker;
         [SerializeField]
-        private string m_speaker = null;
+        private CharInfo m_speaker = CharInfo.Empty;
 
         /// <summary>
         /// The text to be spoken to the player

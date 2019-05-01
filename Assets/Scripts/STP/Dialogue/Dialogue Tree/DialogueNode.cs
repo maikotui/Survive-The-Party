@@ -6,7 +6,7 @@ using XNode;
 
 namespace STP.Dialogue
 {
-    [CreateNodeMenu("Dialogue Node")]
+    [CreateNodeMenu("Dialogue Node"), NodeWidth(350), NodeTint("#d3d3d3")]
     public class DialogueNode : Node
     {
         /// <summary>

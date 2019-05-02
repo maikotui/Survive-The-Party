@@ -73,6 +73,7 @@ MonoBehaviour:
       _connectionType: 1
       _typeConstraint: 0
       _dynamic: 0
+  m_isStartNode: 1
   m_source: {fileID: 0}
   m_speaker: {fileID: 11400000, guid: a935b369680f03042abd2aa5bfdcdf2f, type: 2}
   m_text: What's your favorite color?
@@ -144,7 +145,7 @@ MonoBehaviour:
   m_Name: Dialogue Node
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 248, y: -472}
+  position: {x: 248, y: -504}
   ports:
     keys:
     - m_source
@@ -201,6 +202,7 @@ MonoBehaviour:
       _connectionType: 1
       _typeConstraint: 0
       _dynamic: 0
+  m_isStartNode: 0
   m_source: {fileID: 0}
   m_speaker: {fileID: 11400000, guid: a935b369680f03042abd2aa5bfdcdf2f, type: 2}
   m_text: Red sucks bro lol
@@ -221,11 +223,11 @@ MonoBehaviour:
   m_Name: Test Tree
   m_EditorClassIdentifier: 
   nodes:
-  - {fileID: -1817897818260308573}
-  - {fileID: 2550462795468752995}
-  - {fileID: 7266854319093559091}
   - {fileID: -8622281798044751078}
+  - {fileID: -1817897818260308573}
+  - {fileID: 7266854319093559091}
   - {fileID: -7465040390413637731}
+  - {fileID: 2550462795468752995}
 --- !u!114 &2550462795468752995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -290,7 +292,7 @@ MonoBehaviour:
   m_Name: Dialogue Node
   m_EditorClassIdentifier: 
   graph: {fileID: 11400000}
-  position: {x: 248, y: -216}
+  position: {x: 248, y: -184}
   ports:
     keys:
     - m_source
@@ -347,6 +349,7 @@ MonoBehaviour:
       _connectionType: 1
       _typeConstraint: 0
       _dynamic: 0
+  m_isStartNode: 0
   m_source: {fileID: 0}
   m_speaker: {fileID: 11400000, guid: a935b369680f03042abd2aa5bfdcdf2f, type: 2}
   m_text: Oh green is cool I guess

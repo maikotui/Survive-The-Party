@@ -45,11 +45,11 @@ public class DialogueNodeEditor : NodeEditor
         // If the tree is a start node, don't draw the source. Otherwise, draw it.
         if(tree.StartNode == node)
         {
-            DrawAllExcept(new string[] { "m_Script", "graph", "position", "ports", "m_source" });
+            DrawAllExcept(new string[] { "m_Script", "graph", "position", "ports", "m_isStartNode", "m_source" });
         }
         else
         {
-            DrawAllExcept(new string[] { "m_Script", "graph", "position", "ports"});
+            DrawAllExcept(new string[] { "m_Script", "graph", "position", "ports", "m_isStartNode" });
         }
     }
 

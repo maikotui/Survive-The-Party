@@ -10,6 +10,13 @@ namespace STP.Dialogue
     public class DialogueNode : Node
     {
         /// <summary>
+        /// Defines whether this DialogueNode is the start node for the tree it is in.
+        /// </summary>
+        public bool IsStartNode { get => m_isStartNode; set => m_isStartNode = value; }
+        [SerializeField, STP.ReadOnly]
+        private bool m_isStartNode = false;
+
+        /// <summary>
         /// The DialogueOption that this Node was accessed from. Null if this node is a start node for it's graph (DialogueTree)
         /// </summary>
         [SerializeField, Input(connectionType = ConnectionType.Override, typeConstraint = TypeConstraint.Strict)]

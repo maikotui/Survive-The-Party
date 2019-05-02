@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using XNode;
 
@@ -11,9 +12,21 @@ namespace STP.Dialogue
         /// <summary>
         /// Where the dialogue starts when initiated
         /// </summary>
-        public DialogueNode StartNode { get; private set; }
-        [SerializeField]
-        private DialogueNode m_startNode; // needs to be serialized so it persists across scenes
+        public DialogueNode StartNode
+        {
+            get
+            {
+                foreach (Node node in nodes)
+                {
+                    if (node is DialogueNode dnode && dnode.IsStartNode)
+                    {
+                        return dnode;
+                    }
+                }
+
+                return null; // if it doesn't exist, return null
+            }
+        }
 
         /// <summary>
         /// The currently addressed node in this graph. Starts with the start node.
@@ -34,31 +47,23 @@ namespace STP.Dialogue
         /// </summary>
         private void ValidateNodes()
         {
-            if(StartNode == null)
+            if (StartNode == null)
             {
                 Debug.LogWarning("No start node is set in Dialogue Tree '" + name + "'.");
             }
 
-            foreach(Node node in nodes)
+            foreach (Node node in nodes)
             {
-                if(node is DialogueOption optionNode)
+                if (node is DialogueOption optionNode)
                 {
-                    if(optionNode.GetPort("m_source").Connection == null)
+                    if (optionNode.GetPort("m_source").Connection == null)
                     {
                         Debug.LogWarning("Empty source exists within a OptionNode in Dialogue Tree '" + name + "'.");
                     }
-                    
-                    if(optionNode.GetPort("m_destination").Connection == null)
+
+                    if (optionNode.GetPort("m_destination").Connection == null)
                     {
                         Debug.LogWarning("Empty destination exists within a OptionNode in Dialogue Tree '" + name + "'.");
-                    }
-                }
-
-                if(node is DialogueNode dialogueNode)
-                {
-                    if(dialogueNode.Speaker == null)
-                    {
-                        Debug.LogWarning("Empty speaker for DialogueNode in Dialogue Tree '" + name + "'.");
                     }
                 }
             }
@@ -90,9 +95,16 @@ namespace STP.Dialogue
         /// </summary>
         public void SetStartNode(DialogueNode node)
         {
-            if (node.graph == this)
+            if (nodes.Contains(node))
             {
-                StartNode = node;
+                if (StartNode != null)
+                {
+                    StartNode.IsStartNode = false;
+                }
+
+                node.IsStartNode = true;
+
+                CurrentNode = StartNode;
             }
         }
     }

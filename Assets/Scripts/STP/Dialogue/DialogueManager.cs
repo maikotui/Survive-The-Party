@@ -11,7 +11,7 @@ namespace STP.Dialogue
 
         public DialogueTree CurrentDialogue { get; private set; }
 
-        public delegate void DialogueChangedHandler(DialogueChangedArgs args);
+        public delegate void DialogueChangedHandler(DialogueState state);
         public event DialogueChangedHandler OnDialogueChanged;
 
         /// <summary>
@@ -22,7 +22,7 @@ namespace STP.Dialogue
             if (!DialogueIsActive) // Dialogue is NOT active
             {
                 CurrentDialogue = dialogue;
-                OnDialogueChanged?.Invoke(new DialogueChangedArgs(dialogue.CurrentNode));
+                OnDialogueChanged?.Invoke(new DialogueState(dialogue.CurrentNode));
                 return true;
             }
             else
@@ -42,7 +42,7 @@ namespace STP.Dialogue
                 DialogueOption chosenOption = CurrentDialogue.ChooseOption(optionID);
                 chosenOption.OnOptionChosen?.Invoke();
 
-                OnDialogueChanged?.Invoke(new DialogueChangedArgs(CurrentDialogue.CurrentNode));
+                OnDialogueChanged?.Invoke(new DialogueState(CurrentDialogue.CurrentNode));
                 return true;
             }
             else
@@ -59,7 +59,7 @@ namespace STP.Dialogue
             if (DialogueIsActive)
             {
                 CurrentDialogue = null;
-                OnDialogueChanged?.Invoke(new DialogueChangedArgs());
+                OnDialogueChanged?.Invoke(new DialogueState());
                 return true;
             }
             else
@@ -69,7 +69,7 @@ namespace STP.Dialogue
         }
     }
 
-    public class DialogueChangedArgs
+    public class DialogueState
     {
         public bool IsActive { get; private set; }
 
@@ -79,12 +79,12 @@ namespace STP.Dialogue
 
         public string[] Options { get; private set; }
 
-        public DialogueChangedArgs()
+        public DialogueState()
         {
             IsActive = false;
         }
 
-        public DialogueChangedArgs(DialogueNode node)
+        public DialogueState(DialogueNode node)
         {
             IsActive = true;
             Speaker = node.Speaker;

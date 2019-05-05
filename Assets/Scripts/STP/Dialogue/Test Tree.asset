@@ -228,6 +228,7 @@ MonoBehaviour:
   - {fileID: 7266854319093559091}
   - {fileID: -7465040390413637731}
   - {fileID: 2550462795468752995}
+  m_lineSplitter: $1
 --- !u!114 &2550462795468752995
 MonoBehaviour:
   m_ObjectHideFlags: 0

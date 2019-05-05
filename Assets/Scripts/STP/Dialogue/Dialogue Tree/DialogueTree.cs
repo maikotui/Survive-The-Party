@@ -9,6 +9,10 @@ namespace STP.Dialogue
     [CreateAssetMenu(menuName = "Dialogue/Dialogue Tree", fileName = "Tree")]
     public class DialogueTree : NodeGraph
     {
+        public string LineSplitter => m_lineSplitter;
+        [SerializeField, Header("Settings")]
+        private string m_lineSplitter = "";
+
         /// <summary>
         /// Where the dialogue starts when initiated
         /// </summary>
